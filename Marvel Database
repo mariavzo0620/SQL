@@ -1,4 +1,7 @@
-/* Put your data in here and query it! */
+#In this Khan Academy project, I used a data set from https://gist.github.com/pamelafox/585364b62390ea720858 about Marvel heroes and villians. I used SQL to aggregate 
+data using functions such as AND, HAVING, and CASE.
+
+
 /* Marvel Heroes and Villains
  Based on the website http://marvel.wikia.com/Main_Page
  with popularity data from http://observationdeck.io9.com/something-i-found-marvel-character-popularity-poll-cb-1568108064 
@@ -49,16 +52,14 @@ INSERT INTO Marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "
 INSERT INTO Marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
     
   
-SELECT name,speed from marvels order by speed;
-
 SELECT avg(height_m) from marvels;
 
 SELECT alignment ,avg(INTELLIGENCE) FROM marvels group by alignment;
 
 
-select name, popularity from marvels
-    group by name
-    having popularity >50;
+SELECT name, popularity from marvels
+    GROUP by name
+    HAVING popularity >50;
     
     
 SELECT  COUNT(*),
@@ -66,15 +67,19 @@ SELECT  COUNT(*),
         WHEN popularity>80 then "A"
         WHEN popularity >60 then "B"
         WHEN popularity >40 then "C"
-    else "F"
-    end as "grade"
-    from marvels
-    group by grade;
+    ELSE "F"
+    END as "grade"
+    FROM marvels
+    GROUP by grade;
     
-
 
 SELECT name, weight_kg FROM marvels WHERE weight_kg > 200 ORDER BY weight_kg;
 
+SELECT name,speed from marvels order by speed desc;
+
+SELECT name 
+FROM marvels
+WHERE speed >5 and durability >5;
 
 
    
