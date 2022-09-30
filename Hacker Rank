@@ -26,3 +26,13 @@ WHERE countrycode ="JPN";
 SELECT Name 
 FROM City 
 WHERE Countrycode = 'JPN';
+
+#7. Query a list of CITY and STATE from the STATION table.
+SELECT city, state 
+FROM station;
+
+#8. Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+SELECT DISTINCT city
+FROM station
+WHERE MOD(ID, 2) = 0;
+
