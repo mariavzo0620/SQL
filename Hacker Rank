@@ -7,3 +7,8 @@ WHERE countrycode = "USA" and  population > 100000;
 SELECT name 
 FROM city 
 WHERE countrycode = "USA" and population > 120000;
+
+#3. Query all columns (attributes) for every row in the CITY table.
+SELECT * 
+FROM city
+
